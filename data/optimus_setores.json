@@ -1,0 +1,153 @@
+{
+  "assistente": "Optimus",
+  "versao": "1.0.0",
+  "descricao": "Base de conhecimento de setores financeiros para análise e recomendação de investimentos com base em contexto geopolítico e macroeconômico.",
+  "ultima_atualizacao": "2026-03-09",
+  "setores": [
+    {
+      "id": "DEF001",
+      "nome": "Defesa e Segurança",
+      "descricao": "Empresas fabricantes de armamentos, tecnologia militar, cibersegurança e serviços de inteligência. Tendem a se valorizar em períodos de conflito geopolítico, aumento de tensões entre nações e expansão de orçamentos militares.",
+      "indicadores_positivos": [
+        "Conflitos armados ativos entre países",
+        "Aumento do orçamento militar de grandes potências",
+        "Ataques cibernéticos de grande escala",
+        "Expansão da OTAN ou alianças militares",
+        "Sanções econômicas entre blocos"
+      ],
+      "indicadores_negativos": [
+        "Acordos de paz e cessar-fogo",
+        "Cortes no orçamento de defesa",
+        "Períodos prolongados de estabilidade geopolítica"
+      ],
+      "exemplos_ativos": ["Lockheed Martin (LMT)", "Rheinmetall (RHM)", "BAE Systems (BA.L)", "Palantir (PLTR)"],
+      "risco": "médio-alto",
+      "horizonte_recomendado": "curto a médio prazo",
+      "correlacao_conflito": 0.85
+    },
+    {
+      "id": "ENE001",
+      "nome": "Energia e Commodities",
+      "descricao": "Petróleo, gás natural, energia nuclear e matérias-primas estratégicas. Altamente sensível a conflitos em regiões produtoras, sanções e decisões da OPEP+. Em crises geopolíticas, o preço do barril tende a subir, beneficiando produtores.",
+      "indicadores_positivos": [
+        "Conflitos no Oriente Médio ou Rússia",
+        "Sanções sobre exportadores de petróleo",
+        "Cortes de produção pela OPEP+",
+        "Invernos rigorosos elevando demanda por gás",
+        "Bloqueios em rotas marítimas estratégicas (Estreito de Hormuz, Canal de Suez)"
+      ],
+      "indicadores_negativos": [
+        "Acordos de produção aumentando oferta",
+        "Recessão global reduzindo demanda",
+        "Aceleração da transição energética"
+      ],
+      "exemplos_ativos": ["Petrobras (PETR4)", "ExxonMobil (XOM)", "Shell (SHEL)", "Vale (VALE3)"],
+      "risco": "médio",
+      "horizonte_recomendado": "curto prazo",
+      "correlacao_conflito": 0.78
+    },
+    {
+      "id": "TEC001",
+      "nome": "Tecnologia e Semicondutores",
+      "descricao": "Chips, inteligência artificial, computação em nuvem e eletrônicos. Sensível a disputas comerciais (como a guerra tecnológica EUA-China), restrições de exportação de chips e corrida armamentista tecnológica entre potências.",
+      "indicadores_positivos": [
+        "Corrida por supremacia em IA entre nações",
+        "Aumento de investimentos em cibersegurança",
+        "Nearshoring e reshoring da cadeia de semicondutores",
+        "Subsídios governamentais ao setor (ex: CHIPS Act)",
+        "Conflitos estimulando drones e tecnologia militar autônoma"
+      ],
+      "indicadores_negativos": [
+        "Restrições de exportação prejudicando receitas",
+        "Ruptura na cadeia de suprimentos de Taiwan",
+        "Recessão reduzindo demanda por eletrônicos"
+      ],
+      "exemplos_ativos": ["NVIDIA (NVDA)", "TSMC (TSM)", "Intel (INTC)", "Samsung (005930.KS)"],
+      "risco": "médio-alto",
+      "horizonte_recomendado": "médio a longo prazo",
+      "correlacao_conflito": 0.62
+    },
+    {
+      "id": "SAU001",
+      "nome": "Saúde e Farmacêutico",
+      "descricao": "Laboratórios, hospitais, biotech e equipamentos médicos. Apresenta comportamento defensivo em crises econômicas e pode se beneficiar de pandemias, conflitos com vítimas em massa e envelhecimento populacional.",
+      "indicadores_positivos": [
+        "Surtos pandêmicos ou emergências de saúde pública",
+        "Conflitos gerando demanda por suprimentos médicos",
+        "Envelhecimento acelerado da população global",
+        "Aprovações de novos medicamentos ou vacinas",
+        "Aumento de gastos públicos em saúde"
+      ],
+      "indicadores_negativos": [
+        "Regulação de preços de medicamentos",
+        "Fracasso em ensaios clínicos de grandes produtos",
+        "Crises fiscais cortando gastos públicos em saúde"
+      ],
+      "exemplos_ativos": ["Johnson & Johnson (JNJ)", "Pfizer (PFE)", "Hypera (HYPE3)", "Hapvida (HAPV3)"],
+      "risco": "baixo-médio",
+      "horizonte_recomendado": "médio a longo prazo",
+      "correlacao_conflito": 0.45
+    },
+    {
+      "id": "AGR001",
+      "nome": "Agronegócio e Alimentos",
+      "descricao": "Produção agrícola, fertilizantes, exportação de grãos e proteínas. Conflitos em regiões produtoras (como Ucrânia e Rússia) causam choques de oferta elevando preços globais de commodities agrícolas, beneficiando exportadores como o Brasil.",
+      "indicadores_positivos": [
+        "Conflitos em regiões exportadoras de grãos (Ucrânia, Rússia)",
+        "Sanções sobre fertilizantes russos ou bielorrussos",
+        "Eventos climáticos extremos reduzindo colheitas",
+        "Desvalorizaçao cambial beneficiando exportadores brasileiros",
+        "Aumento da demanda global por alimentos"
+      ],
+      "indicadores_negativos": [
+        "Supersafras pressionando preços para baixo",
+        "Valorização cambial reduzindo competitividade exportadora",
+        "Barreiras tarifárias em mercados importadores"
+      ],
+      "exemplos_ativos": ["SLC Agrícola (SLCE3)", "BrasilAgro (AGRO3)", "Nutrien (NTR)", "Archer-Daniels (ADM)"],
+      "risco": "médio",
+      "horizonte_recomendado": "curto a médio prazo",
+      "correlacao_conflito": 0.70
+    },
+    {
+      "id": "FIN001",
+      "nome": "Ouro e Ativos de Refúgio",
+      "descricao": "Ouro físico, ETFs de ouro, franco suíço e títulos do tesouro americano. Considerados 'porto seguro' em momentos de alta incerteza, conflitos geopolíticos e instabilidade financeira. A demanda sobe quando investidores buscam proteção.",
+      "indicadores_positivos": [
+        "Guerras ou conflitos de grande escala",
+        "Crise financeira sistêmica",
+        "Alta inflação e desconfiança em moedas",
+        "Instabilidade em grandes economias",
+        "Corrida por ouro por bancos centrais"
+      ],
+      "indicadores_negativos": [
+        "Alta de juros reais nos EUA (fortalece dólar)",
+        "Resolução de conflitos e estabilidade geopolítica",
+        "Ambiente de crescimento global sólido"
+      ],
+      "exemplos_ativos": ["GLD (ETF)", "IAU (ETF)", "Newmont (NEM)", "Barrick Gold (GOLD)"],
+      "risco": "baixo",
+      "horizonte_recomendado": "proteção patrimonial / qualquer prazo",
+      "correlacao_conflito": 0.90
+    },
+    {
+      "id": "INF001",
+      "nome": "Infraestrutura e Logística",
+      "descricao": "Portos, ferrovias, rodovias e empresas de logística. Em períodos de reconfiguração de cadeias globais de suprimentos causadas por conflitos ou sanções, rotas alternativas e novos corredores logísticos ganham valor estratégico.",
+      "indicadores_positivos": [
+        "Reshoring e diversificação de cadeias produtivas",
+        "Bloqueio de rotas tradicionais (Canal de Suez, Estreito de Malaca)",
+        "Investimentos em infraestrutura como resposta a crises",
+        "Aumento do comércio por novas rotas"
+      ],
+      "indicadores_negativos": [
+        "Recessão global reduzindo volumes de comércio",
+        "Alta de combustíveis aumentando custos operacionais"
+      ],
+      "exemplos_ativos": ["Santos Brasil (STBP3)", "JSL (JSLG3)", "UPS (UPS)", "Maersk (MAERSK-B.CO)"],
+      "risco": "médio",
+      "horizonte_recomendado": "médio a longo prazo",
+      "correlacao_conflito": 0.55
+    }
+  ]
+}

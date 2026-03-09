@@ -1,0 +1,100 @@
+{
+  "modulo": "Análise Geopolítica",
+  "descricao": "Mapeamento de tipos de conflitos e seus impactos esperados nos mercados financeiros. Usado pelo Optimus para classificar eventos noticiosos e recomendar alocação de ativos.",
+  "tipos_de_conflito": [
+    {
+      "tipo": "Guerra Convencional entre Estados",
+      "exemplos_historicos": ["Rússia-Ucrânia (2022)", "Guerra do Golfo (1990)"],
+      "impacto_esperado": {
+        "energia": "alta forte",
+        "defesa": "alta forte",
+        "ouro": "alta forte",
+        "agronegocio": "alta moderada (se região produtora)",
+        "tecnologia": "neutro a negativo",
+        "saude": "alta moderada",
+        "bolsas_globais": "queda inicial, recuperação em 3-6 meses"
+      },
+      "duracao_tipica_impacto": "6 a 24 meses",
+      "nivel_risco_sistemico": "alto"
+    },
+    {
+      "tipo": "Conflito Regional Limitado",
+      "exemplos_historicos": ["Israel-Hamas (2023)", "Conflito no Iêmen"],
+      "impacto_esperado": {
+        "energia": "alta moderada",
+        "defesa": "alta moderada",
+        "ouro": "alta moderada",
+        "agronegocio": "neutro",
+        "tecnologia": "neutro",
+        "saude": "neutro",
+        "bolsas_globais": "volatilidade temporária"
+      },
+      "duracao_tipica_impacto": "1 a 6 meses",
+      "nivel_risco_sistemico": "médio"
+    },
+    {
+      "tipo": "Guerra Comercial e Sanções",
+      "exemplos_historicos": ["Guerra Comercial EUA-China (2018-2020)", "Sanções à Rússia (2022)"],
+      "impacto_esperado": {
+        "energia": "alta (se energia for alvo das sanções)",
+        "defesa": "neutro a positivo",
+        "ouro": "alta moderada",
+        "agronegocio": "alta (disrupcão de cadeias alimentares)",
+        "tecnologia": "negativo (restrições de chips)",
+        "saude": "neutro",
+        "bolsas_globais": "queda moderada e prolongada"
+      },
+      "duracao_tipica_impacto": "12 a 36 meses",
+      "nivel_risco_sistemico": "médio-alto"
+    },
+    {
+      "tipo": "Crise Humanitária e Pandemia",
+      "exemplos_historicos": ["COVID-19 (2020)", "Ébola (2014)"],
+      "impacto_esperado": {
+        "energia": "queda forte (queda de demanda)",
+        "defesa": "neutro",
+        "ouro": "alta forte",
+        "agronegocio": "alta (disrupcão logística)",
+        "tecnologia": "alta (digitalização acelerada)",
+        "saude": "alta forte",
+        "bolsas_globais": "queda abrupta, recuperação em V possível"
+      },
+      "duracao_tipica_impacto": "6 a 18 meses",
+      "nivel_risco_sistemico": "muito alto"
+    },
+    {
+      "tipo": "Tensão em Estreitos e Rotas Marítimas",
+      "exemplos_historicos": ["Crise do Canal de Suez (Houthis 2024)", "Tensões no Estreito de Taiwan"],
+      "impacto_esperado": {
+        "energia": "alta forte (custos de frete e seguros)",
+        "defesa": "alta moderada",
+        "ouro": "alta leve",
+        "agronegocio": "alta (atraso em entregas)",
+        "tecnologia": "negativo (atraso em semicondutores)",
+        "saude": "neutro",
+        "bolsas_globais": "volatilidade em setores afetados"
+      },
+      "duracao_tipica_impacto": "1 a 12 meses",
+      "nivel_risco_sistemico": "médio"
+    },
+    {
+      "tipo": "Instabilidade Política Interna (Golpe / Eleição Contestada)",
+      "exemplos_historicos": ["Golpe no Gabon (2023)", "Crise política no Peru (2022)"],
+      "impacto_esperado": {
+        "energia": "alta se país produtor",
+        "defesa": "neutro",
+        "ouro": "alta leve",
+        "agronegocio": "neutro a negativo (se país exportador)",
+        "tecnologia": "neutro",
+        "saude": "neutro",
+        "bolsas_globais": "queda local intensa, contágio limitado"
+      },
+      "duracao_tipica_impacto": "1 a 6 meses",
+      "nivel_risco_sistemico": "baixo-médio"
+    }
+  ],
+  "matriz_de_impacto": {
+    "escala": "forte alta / alta moderada / alta leve / neutro / negativo / queda moderada / queda forte",
+    "nota": "Impactos são estimativas baseadas em padrões históricos e não garantem resultados futuros."
+  }
+}

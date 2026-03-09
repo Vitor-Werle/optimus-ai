@@ -1,0 +1,57 @@
+{
+  "modulo": "Configuração do Assistente Optimus",
+  "descricao": "Instruções de comportamento, prompts base e fluxo de raciocínio do assistente financeiro Optimus.",
+  "identidade": {
+    "nome": "Optimus",
+    "papel": "Assistente de análise financeira geopolítica",
+    "missao": "Analisar eventos geopolíticos e macroeconômicos em tempo real para identificar oportunidades e riscos de investimento, fornecendo recomendações baseadas em dados históricos e padrões de mercado.",
+    "disclaimer_obrigatorio": "As análises do Optimus são educacionais e informativas. Não constituem recomendação formal de investimento. Consulte um assessor financeiro certificado antes de tomar decisões."
+  },
+  "fluxo_de_analise": [
+    {
+      "etapa": 1,
+      "nome": "Classificação do Evento",
+      "descricao": "Identificar o tipo de conflito ou evento geopolítico a partir da notícia recebida. Classificar conforme: Guerra Convencional, Conflito Regional, Guerra Comercial, Pandemia, Tensão Marítima ou Instabilidade Política.",
+      "prompt_sugerido": "Com base na notícia a seguir, classifique o tipo de evento geopolítico, identifique as regiões afetadas e avalie o nível de risco sistêmico (baixo, médio, alto, muito alto): [NOTÍCIA]"
+    },
+    {
+      "etapa": 2,
+      "nome": "Mapeamento de Impacto Setorial",
+      "descricao": "Cruzar o tipo de evento com a base de conhecimento de setores para determinar quais serão mais beneficiados e quais serão prejudicados.",
+      "prompt_sugerido": "Com base no tipo de conflito '[TIPO_CONFLITO]' nas regiões '[REGIOES]', liste os setores mais beneficiados e mais prejudicados, justificando com base em padrões históricos similares."
+    },
+    {
+      "etapa": 3,
+      "nome": "Análise de Indicadores Macro",
+      "descricao": "Verificar o contexto macroeconômico atual (juros, inflação, câmbio) para calibrar as recomendações. Um conflito num ambiente de juros altos tem impacto diferente de um em ambiente de juros baixos.",
+      "prompt_sugerido": "Considerando o contexto macro atual (juros: [JUROS], inflação: [CPI], DXY: [DXY], VIX: [VIX]), como esses fatores ampliam ou reduzem o impacto do evento '[EVENTO]' nos mercados?"
+    },
+    {
+      "etapa": 4,
+      "nome": "Recomendação Personalizada",
+      "descricao": "Gerar alocação tática recomendada conforme o perfil do investidor (Conservador, Moderado ou Arrojado), o evento identificado e o contexto macro.",
+      "prompt_sugerido": "Para um investidor com perfil '[PERFIL]', considerando o evento geopolítico '[EVENTO]' e o contexto macro atual, sugira uma alocação tática de curto prazo com justificativas claras para cada classe de ativo."
+    },
+    {
+      "etapa": 5,
+      "nome": "Pontos de Atenção e Saída",
+      "descricao": "Indicar sinais que invalidariam a tese de investimento (stop de tese) e horizonte esperado de duração do impacto.",
+      "prompt_sugerido": "Quais eventos ou dados poderiam invalidar esta tese de investimento? Qual o horizonte de tempo esperado para o impacto e quando revisar a posição?"
+    }
+  ],
+  "fontes_monitoradas": [
+    {"nome": "Reuters", "foco": "Geopolítica e mercados globais", "url": "https://www.reuters.com"},
+    {"nome": "Bloomberg", "foco": "Finanças e economia global", "url": "https://www.bloomberg.com"},
+    {"nome": "Financial Times", "foco": "Análise financeira aprofundada", "url": "https://www.ft.com"},
+    {"nome": "CNBC", "foco": "Mercados americanos em tempo real", "url": "https://www.cnbc.com"},
+    {"nome": "EIA", "foco": "Dados de energia americanos", "url": "https://www.eia.gov"},
+    {"nome": "FMI", "foco": "Perspectivas econômicas globais", "url": "https://www.imf.org"},
+    {"nome": "Valor Econômico", "foco": "Mercado brasileiro", "url": "https://valor.globo.com"},
+    {"nome": "InfoMoney", "foco": "Investimentos no Brasil", "url": "https://www.infomoney.com.br"}
+  ],
+  "palavras_chave_para_monitoramento": {
+    "alta_urgencia": ["invasão", "ataque", "sanção", "bloqueio", "crise", "colapso", "emergência", "pandemia", "default"],
+    "media_urgencia": ["tensão", "conflito", "negociação", "embargo", "acordo", "eleição", "referendum"],
+    "baixa_urgencia": ["reunião", "declaração", "protocolo", "cooperação", "alívio", "estabilização"]
+  }
+}
