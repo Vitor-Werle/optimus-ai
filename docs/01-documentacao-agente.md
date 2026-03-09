@@ -5,13 +5,11 @@
 ### Problema
 > Qual problema financeiro seu agente resolve?
 
-Iniciantes não sabem em quais segmentos investir dentro da atual economia global
-
+Investidores veêm as notícias, mas não sabem como isso impacta a economia global
 ### Solução
 > Como o agente resolve esse problema de forma proativa?
 
-Um agente que analisa as últimas notícias e seus impactos em cada segmento do mercado financeiro e fornece áreas que se beneficiam-se no conflitos atuais.
-
+O usuário cita a notícia e o assistente avalia como a economia é impactada.
 ### Público-Alvo
 > Quem vai usar esse agente?
 
@@ -58,7 +56,7 @@ flowchart TD
 |------------|-----------|
 | Interface | Chatbot em Streamlit
 | LLM | ainda não sei
-| Base de Conhecimento | JSON/CSV com dados do cliente/pesquisas online
+| Base de Conhecimento | JSON/CSV com dados do cliente e notícias fornecidas pelo user
 | Validação | Checagem de alucinações
 
 ---
@@ -67,7 +65,7 @@ flowchart TD
 
 ### Estratégias Adotadas
 
-- [ ] [Agente só responde com base nos dados fornecidos e pesquisas
+- [ ] [Agente só responde com base nos dados fornecidos 
 - [ ] Respostas incluem fonte da informação
 - [ ] Quando não sabe, admite e redireciona
 - [ ] Não faz recomendações de investimento sem perfil do cliente
@@ -75,4 +73,4 @@ flowchart TD
 ### Limitações Declaradas
 > O que o agente NÃO faz?
 
-Recomendações de ativos. 
+Recomendações de empresas
