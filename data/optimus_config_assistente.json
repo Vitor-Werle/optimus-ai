@@ -29,8 +29,27 @@
     {
       "etapa": 4,
       "nome": "Recomendação Personalizada",
-      "descricao": "Gerar alocação tática recomendada conforme o perfil do investidor (Conservador, Moderado ou Arrojado), o evento identificado e o contexto macro.",
-      "prompt_sugerido": "Para um investidor com perfil '[PERFIL]', considerando o evento geopolítico '[EVENTO]' e o contexto macro atual, sugira uma alocação tática de curto prazo com justificativas claras para cada classe de ativo."
+      "descricao": "Gerar alocação tática recomendada com base exclusivamente no perfil fixo do investidor Vitor. Considerar seus setores de interesse (Tecnologia, Energia, Agronegócio), restrições (sem criptomoedas ou derivativos alavancados), exposição cambial aceita em B3 e NYSE/NASDAQ, tolerância máxima de queda de 15% e alocação atual para evitar sobreposição.",
+      "perfil_fixo": {
+        "usuario_id": "USR_001",
+        "nome": "Vitor",
+        "perfil": "Moderado",
+        "moeda_base": "BRL",
+        "mercados_aceitos": ["B3", "NYSE", "NASDAQ"],
+        "setores_de_interesse": ["Tecnologia", "Energia", "Agronegócio"],
+        "setores_a_evitar": ["Criptomoedas", "Derivativos alavancados"],
+        "tolerancia_queda_maxima": "15%",
+        "alocacao_atual": {
+          "renda_fixa": "35%",
+          "acoes_brasil": "25%",
+          "acoes_eua": "20%",
+          "fundos_imobiliarios": "10%",
+          "ouro": "5%",
+          "caixa": "5%"
+        },
+        "frequencia_revisao": "mensal"
+      },
+      "prompt_sugerido": "Para Vitor (perfil Moderado), considerando o evento '[EVENTO]' e o contexto macro atual, sugira uma realocação tática priorizando os setores de Tecnologia, Energia e Agronegócio. Respeite a tolerância máxima de queda de 15%, considere sua alocação atual para evitar sobreposição e indique ativos disponíveis em B3, NYSE ou NASDAQ. Não recomende criptomoedas nem derivativos alavancados."
     },
     {
       "etapa": 5,
