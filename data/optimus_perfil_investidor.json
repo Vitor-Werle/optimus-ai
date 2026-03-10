@@ -1,0 +1,36 @@
+{
+  "usuario": {
+    "id": "USR_001",
+    "nome": "Vitor,
+    "idade": 38,
+    "profissao": "Engenheiro de Software",
+    "cidade": "São Paulo, SP",
+    "renda_mensal": 18000,
+    "patrimonio_investido": 95000,
+    "perfil": "Moderado",
+    "experiencia": "3 anos investindo",
+    "objetivo": "Crescimento patrimonial de médio a longo prazo com proteção em cenários de crise",
+    "horizonte": "5 a 7 anos"
+  },
+  "preferencias": {
+    "setores_de_interesse": ["Tecnologia", "Energia", "Agronegócio"],
+    "setores_a_evitar": ["Criptomoedas", "Derivativos alavancados"],
+    "mercados": ["Brasil (B3)", "EUA (NYSE/NASDAQ)"],
+    "moeda_base": "BRL",
+    "exposicao_cambial_aceita": true
+  },
+  "alocacao_atual": {
+    "renda_fixa": "35%",
+    "acoes_brasil": "25%",
+    "acoes_eua": "20%",
+    "fundos_imobiliarios": "10%",
+    "ouro": "5%",
+    "caixa": "5%"
+  },
+  "comportamento_em_crise": {
+    "reacao_tipica": "Mantém posição mas busca realocar parte do portfólio para ativos defensivos",
+    "tolerancia_queda_maxima": "15%",
+    "aceita_volatilidade_temporaria": true,
+    "frequencia_revisao": "mensal"
+  }
+}
