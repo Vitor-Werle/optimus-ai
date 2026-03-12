@@ -43,10 +43,15 @@ Todos os dados vão no system prompt, é mais simples e fácil de implementar
 > Mostre um exemplo de como os dados são formatados para o agente.
 
 ```
-  Notícia
-  → classifica tipo de conflito
-    → busca setores + histórico similar + macro atual
-      → formata tudo como contexto
-        → modelo gera análise
+    contexto = f"""
+        CLIENTE: {perfil['usuario']['nome']}, {perfil['usuario']['idade']} anos e tem o objetivo {perfil['usuario']['objetivo']}
+        SETORES: Tem interesse em {perfil['preferencias']['setores_de_interesse']} e evita {perfil['preferencias']['setores_a_evitar']} 
+
+        INDICADORES:
+        {indicador[colunas_uteis].to_string(index=False)}
+
+        CONFIG_RESPOSTA:
+        {json.dumps(config['fluxo_de_analise'], ensure_ascii=False, indent=2)}    
+    """
   ...
 ```
