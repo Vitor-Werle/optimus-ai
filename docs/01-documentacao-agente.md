@@ -4,15 +4,18 @@
 
 ### Problema
 > Qual problema financeiro seu agente resolve?
+
 Investidores veêm as notícias, mas não sabem como isso impacta a economia global
 > 
 ### Solução
 > Como o agente resolve esse problema de forma proativa?
+
 O usuário cita a notícia e o assistente avalia como a economia é impactada.
 > 
 ### Público-Alvo
 > Quem vai usar esse agente?
-Iniciantes no mercado financeiro que desejam saber em quais áreas investir
+
+Investidores que queiram uma avaliação da economia mediante ao acontecimento fornecido
 ---
 
 ## Persona e Tom de Voz
@@ -22,10 +25,12 @@ Optimus
 
 ### Personalidade
 > Como o agente se comporta? (ex: consultivo, direto, educativo)
+
 Analísta e sugestivo
 
 ### Tom de Comunicação
 > Formal, informal, técnico, acessível?
+
 Técnico
 
 ### Exemplos de Linguagem
@@ -54,8 +59,8 @@ flowchart TD
 | Componente | Descrição |
 |------------|-----------|
 | Interface | Chatbot em Streamlit
-| LLM | Ollama via LFM2 
-| Base de Conhecimento | JSON/CSV com dados do cliente e notícias fornecidas pelo user
+| LLM | Ollama via llama3.2:1b
+| Base de Conhecimento | JSON/CSV com dados do cliente e notícias fornecidas pelo cliente
 | Validação | Checagem de alucinações
 
 ---
