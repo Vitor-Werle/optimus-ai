@@ -1,149 +1,59 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+🤖 Optimus: Analista Financeiro Geopolítico
+O Optimus é um agente de inteligência artificial proativo projetado para ajudar investidores a entenderem o impacto de eventos geopolíticos e notícias macroeconômicas em seus portfólios. Diferente de chatbots reativos, o Optimus cruza notícias em tempo real com uma base histórica de conflitos e indicadores macro para sugerir alocações táticas.
 
-## Contexto
+🎯 Caso de Uso
+Problema: Investidores têm dificuldade em interpretar como notícias de conflitos ou crises impactam ativos específicos.
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
+Solução: O usuário fornece uma notícia e o Optimus analisa os setores beneficiados ou prejudicados com base em padrões históricos.
 
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
+Persona: Um analista técnico e sugestivo que prioriza a segurança e a precisão dos dados.
 
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+🏗️ Arquitetura do Sistema
+O projeto utiliza uma arquitetura local para garantir privacidade e performance:
 
----
+Interface: Chatbot interativo desenvolvido em Streamlit.
 
-## O Que Você Deve Entregar
+Cérebro (LLM): Ollama executando o modelo llama3.2:1b.
 
-### 1. Documentação do Agente
+Base de Conhecimento: Arquivos JSON e CSV contendo perfis de investidores, indicadores macro e histórico de eventos.
 
-Defina **o que** seu agente faz e **como** ele funciona:
+🛠️ Tecnologias Utilizadas
+Linguagem: Python
 
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
+Bibliotecas: Pandas (manipulação de dados), Streamlit (UI), Requests (comunicação com Ollama)
 
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+Orquestração: Ollama
 
----
+📊 Base de Dados (RAG)
+O agente utiliza os seguintes dados para fundamentar suas análises:
 
-### 2. Base de Conhecimento
+optimus_indicadores_macro.csv: 12 indicadores como VIX, DXY e Fed Rate.
 
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
+optimus_historico_eventos.csv: Histórico de 10 eventos (ex: Invasão à Ucrânia, COVID-19) e seus impactos no S&P 500.
 
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
+optimus_setores.json: Mapeamento de correlação de setores como Defesa, Energia e Tecnologia com conflitos.
 
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
+optimus_perfil_investidor.json: Dados específicos do usuário "Vitor" (perfil moderado).
 
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+🚀 Como Executar
+Prepare o Ollama:
 
----
+Bash
+ollama pull llama3.2:1b
+ollama serve
+Instale as dependências:
 
-### 3. Prompts do Agente
+Bash
+pip install streamlit pandas requests
+Inicie a aplicação:
 
-Documente os prompts que definem o comportamento do seu agente:
+Bash
+streamlit run src/app.py
+🛡️ Segurança e Regras de Negócio
+Anti-Alucinação: O agente é instruído via System Prompt a basear-se estritamente nos dados fornecidos e admitir quando não possui uma informação.
 
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
+Restrições: O Optimus recomenda setores e segmentos, mas nunca empresas específicas, para garantir a conformidade ética.
 
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
+Contexto: Só realiza recomendações personalizadas se o perfil do investidor estiver disponível.
 
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
-
-```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
-```
-
----
-
-## Dicas Finais
-
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+Este projeto foi desenvolvido como parte do desafio de Agentes Inteligentes com IA Generativa.
