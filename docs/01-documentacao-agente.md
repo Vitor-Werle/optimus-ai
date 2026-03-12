@@ -77,4 +77,4 @@ flowchart TD
 ### Limitações Declaradas
 > O que o agente NÃO faz?
 
-Recomendações de empresas
+Filtra notícias notícias falsa
