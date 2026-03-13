@@ -17,14 +17,30 @@ colunas_uteis = ['indicador', 'direcao', 'impacto_acoes_growth', 'impacto_ouro',
 
 # mount data
 contexto = f"""
-    CLIENTE: {perfil['usuario']['nome']}, {perfil['usuario']['idade']} anos e tem o objetivo {perfil['usuario']['objetivo']}
-    SETORES: Tem interesse em {perfil['preferencias']['setores_de_interesse']} e evita {perfil['preferencias']['setores_a_evitar']} 
+    CLIENTE: {perfil['usuario']['nome']}, {perfil['usuario']['idade']} anos
+    OBJETIVO: {perfil['usuario']['objetivo']}
+    HORIZONTE: {perfil['usuario']['horizonte']}
+    EXPERIENCIA: {perfil['usuario']['experiencia']}
+
+    PREFERENCIAS:
+    - Mercados aceitos: {perfil['preferencias']['mercados']}
+    - Setores de interesse: {perfil['preferencias']['setores_de_interesse']}
+    - Setores a evitar: {perfil['preferencias']['setores_a_evitar']}
+    - Aceita exposição cambial: {perfil['preferencias']['exposicao_cambial_aceita']}
+
+    ALOCAÇÃO ATUAL:
+    {json.dumps(perfil['alocacao_atual'], ensure_ascii=False, indent=2)}
+
+    COMPORTAMENTO EM CRISE:
+    - Tolerância máxima de queda: {perfil['comportamento_em_crise']['tolerancia_queda_maxima']}
+    - Reação típica: {perfil['comportamento_em_crise']['reacao_tipica']}
+    - Revisão: {perfil['comportamento_em_crise']['frequencia_revisao']}
 
     INDICADORES:
-        {indicador[colunas_uteis].to_string(index=False)}
+    {indicador[colunas_uteis].to_string(index=False)}
 
     CONFIG_RESPOSTA:
-        {json.dumps(config['fluxo_de_analise'], ensure_ascii=False, indent=2)}    
+    {json.dumps(config['fluxo_de_analise'], ensure_ascii=False, indent=2)}
 """
 
 # system prompt
@@ -34,6 +50,10 @@ SYSTEM_PROMPT = """ Você é o Optimus, um analísta financeiro com base nas not
     1. Sempre baseie suas respostas nos dados fornecidos
     2. Nunca invente informações financeiras
     3. Se não souber algo, admita e ofereça alternativas
+    4. Não reponde perguntas que não estejam relacionadas a investimentos ou finanças
+        Ex.: Qual é a capital da França? -> Desculpe, não posso responder a essa pergunta. Posso ajudar com algo relacionado a investimentos ou finanças?
+            Qual é a previsão do tempo para amanhã? -> Desculpe, não posso responder a essa pergunta. Posso ajudar com algo relacionado a investimentos ou finanças?
+    5. Deixe a advertência de risco como o último parágrafo da resposta
 """
 
 # call ollama
@@ -57,3 +77,5 @@ if pergunta := st.chat_input("Como essa notícia impacta o mundo"):
     st.chat_message("user").write(pergunta)
     with st.spinner("....."):
         st.chat_message("assistente").write(perguntar(pergunta))
+
+
